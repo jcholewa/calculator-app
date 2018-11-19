@@ -37,24 +37,41 @@ class Grid extends Component {
           {this.renderButton("0")}
           {this.renderButton("=")}
           {this.renderButton("+")}
-        </div> <br />
-        <div className="delete-row">
-          <button>DEL</button>
+        </div>{" "}
+        <br />
+        <div>
+          <button className="delete" onClick={this.delete}>
+            DEL
+          </button>
+          <button className="delete" onClick={this.clear}>
+            CLEAR
+          </button>
         </div>
       </div>
     );
   }
 
+  delete = event => {
+    const { inputValue } = this.state;
+    const newInput = inputValue.filter((value, index) => {
+      return index !== inputValue.length - 1;
+    });
+    this.setState({ inputValue: newInput });
+  };
+  clear = event => {
+    this.setState({ inputValue: [] });
+  };
+
   getInput = event => {
     event.preventDefault();
 
-    if (event.target.id !== '=') {
+    if (event.target.id !== "=") {
       const { inputValue } = this.state;
       const newInput = [...inputValue, event.target.id];
       this.setState({ inputValue: newInput });
     } else {
-      let answer = eval(this.state.inputValue.join(""))
-      this.setState({ inputValue: answer.toString().split("") })
+      let answer = eval(this.state.inputValue.join(""));
+      this.setState({ inputValue: answer.toString().split("") });
     }
   };
 }

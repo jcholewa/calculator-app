@@ -1,43 +1,10 @@
-
-.delete-row {
-  align-self: flex-end;
-  font-size: 8px
-  /* float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px; */
-}
-
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
 }
-
-/* ol, ul {
-  padding-left: 30px;
-}
-
-.calculator-row:after {
-  clear: both;
-  content: "";
-  display: table;
-} */
-
-h1 {
-  align-self: flex-start;
-  padding-right: 1em;
-}
-
 button {
   background: #fff;
   border: 1px solid #999;
-  float: left;
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
@@ -47,21 +14,28 @@ button {
   padding: 0;
   text-align: center;
   width: 34px;
+  outline: none;
 }
 
-/* .square:focus {
-  outline: none;
-} */
+.delete {
+  font-size: 12px;
+  width: 68px;
+}
+
+button:hover {
+  background-color: aliceblue;
+}
 
 /* .kbd-navigation .square:focus {
   background: #ddd;
 } */
 
 .App {
-  display: flex;
-  flex-direction: row;
+  /* display: block; */
   margin-left: auto;
-  justify-content: center;
+  margin-right: auto;
+  width: 20%;
+  /* justify-content: center; */
 }
 
 p {
@@ -69,6 +43,5 @@ p {
   height: 1.5em;
   padding-top: 0.5em;
   padding-left: 0.5em;
+  width: 122px;
 }
-
-
