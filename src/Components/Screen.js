@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const Screen = () => {
-  return <p>42</p>
-}
+const Screen = ({ inputValue }) => {
+  return <p>{inputValue}</p>;
+};
 
-export default Screen
+export default Screen;

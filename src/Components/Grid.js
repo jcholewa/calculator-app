@@ -1,45 +1,52 @@
-import React, { Component } from 'react';
-import Button from './Button';
-import Screen from './Screen';
+import React, { Component } from "react";
+import Button from "./Button";
+import Screen from "./Screen";
 
 class Grid extends Component {
+  state = {
+    inputValue: []
+  };
   renderButton(num) {
-    return <Button value={num} />
+    return <Button value={num} getInput={this.getInput} />;
   }
 
   render() {
     return (
-      <div class="grid">
-        <Screen />
-        <div class="calculator-row">
-          {this.renderButton('7')}
-          {this.renderButton('8')}
-          {this.renderButton('9')}
-          {this.renderButton('/')}
+      <div className="grid">
+        <Screen className="screen" inputValue={this.state.inputValue} />
+        <div className="calculator-row">
+          {this.renderButton("7")}
+          {this.renderButton("8")}
+          {this.renderButton("9")}
+          {this.renderButton("/")}
         </div>
-        <div class="calculator-row">
-          {this.renderButton('4')}
-          {this.renderButton('5')}
-          {this.renderButton('6')}
-          {this.renderButton('*')}
+        <div className="calculator-row">
+          {this.renderButton("4")}
+          {this.renderButton("5")}
+          {this.renderButton("6")}
+          {this.renderButton("*")}
         </div>
-        <div class="calculator-row">
-          {this.renderButton('1')}
-          {this.renderButton('2')}
-          {this.renderButton('3')}
-          {this.renderButton('-')}
+        <div className="calculator-row">
+          {this.renderButton("1")}
+          {this.renderButton("2")}
+          {this.renderButton("3")}
+          {this.renderButton("-")}
         </div>
-        <div class="calculator-row">
-          {this.renderButton('.')}
-          {this.renderButton('0')}
-          {this.renderButton('=')}
-          {this.renderButton('+')}
+        <div className="calculator-row">
+          {this.renderButton(".")}
+          {this.renderButton("0")}
+          {this.renderButton("=")}
+          {this.renderButton("+")}
         </div>
       </div>
-    )
+    );
   }
+  getInput = event => {
+    event.preventDefault();
+    const { inputValue } = this.state;
+    const newInput = [...inputValue, event.target.id];
+    this.setState({ inputValue: newInput });
+  };
 }
 
-
-
-export default Grid
+export default Grid;
