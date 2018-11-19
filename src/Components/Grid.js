@@ -37,7 +37,7 @@ class Grid extends Component {
           {this.renderButton("0")}
           {this.renderButton("=")}
           {this.renderButton("+")}
-        </div> <br/>
+        </div> <br />
         <div className="delete-row">
           <button>DEL</button>
         </div>
@@ -53,7 +53,8 @@ class Grid extends Component {
       const newInput = [...inputValue, event.target.id];
       this.setState({ inputValue: newInput });
     } else {
-      this.setState({ inputValue: eval(this.state.inputValue.join("")) })
+      let answer = eval(this.state.inputValue.join(""))
+      this.setState({ inputValue: answer.toString().split("") })
     }
   };
 }
