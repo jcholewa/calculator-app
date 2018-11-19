@@ -37,7 +37,7 @@ class Grid extends Component {
           {this.renderButton("0")}
           {this.renderButton("=")}
           {this.renderButton("+")}
-        </div>
+        </div> <br/>
         <div className="delete-row">
           <button>DEL</button>
         </div>
