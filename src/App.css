@@ -15,6 +15,7 @@ body {
 
 h1 {
   align-self: flex-start;
+  padding-right: 1em;
 }
 
 button {
@@ -56,4 +57,17 @@ p {
   height: 1.5em;
   padding-top: 0.5em;
   padding-left: 0.5em;
+}
+
+.delete-row {
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
 }

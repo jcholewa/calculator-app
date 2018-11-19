@@ -38,14 +38,23 @@ class Grid extends Component {
           {this.renderButton("=")}
           {this.renderButton("+")}
         </div>
+        <div className="delete-row">
+          <button>DEL</button>
+        </div>
       </div>
     );
   }
+
   getInput = event => {
     event.preventDefault();
-    const { inputValue } = this.state;
-    const newInput = [...inputValue, event.target.id];
-    this.setState({ inputValue: newInput });
+
+    if (event.target.id !== '=') {
+      const { inputValue } = this.state;
+      const newInput = [...inputValue, event.target.id];
+      this.setState({ inputValue: newInput });
+    } else {
+      this.setState({ inputValue: eval(this.state.inputValue.join("")) })
+    }
   };
 }
 
